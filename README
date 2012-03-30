@@ -1,0 +1,23 @@
+GS(1)
+
+NAME
+      gs -- Gemset management
+
+SYNOPSIS
+      gs
+      gs init
+      gs help
+
+DESCRIPTION
+      When called with no arguments, it starts a shell session and
+      configures the variables GEM_HOME, GEM_PATH and PATH to point to
+      the $PWD/.gemset directory.
+
+      init
+          Creates the $PWD/.gemset directory.
+
+      help
+          Displays this message.
+
+INSTALLATION
+      $ gem install gs

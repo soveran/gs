@@ -1,0 +1,60 @@
+#!/usr/bin/env ruby
+
+help = <<EOS
+GS(1)
+
+NAME
+      gs -- Gemset management
+
+SYNOPSIS
+      gs
+      gs init
+      gs help
+
+DESCRIPTION
+      When called with no arguments, it starts a shell session and
+      configures the variables GEM_HOME, GEM_PATH and PATH to point to
+      the $PWD/.gemset directory.
+
+      init
+          Creates the $PWD/.gemset directory.
+
+      help
+          Displays this message.
+EOS
+
+rc = <<EOS
+. ~/.bashrc
+
+GEM_HOME="$PWD/.gemset"
+GEM_PATH="$PWD/.gemset"
+GEM_SET=`basename $PWD`
+PATH="$PWD/.gemset/bin:$PATH"
+EOS
+
+# Start a subshell with the init file .gs. If the file doesn't exist,
+# exit with an error.
+def use
+  if File.exists?(".gs")
+    exec "bash --init-file .gs"
+  else
+    puts "File .gs not found. Try `gs help`."
+    exit 1
+  end
+end
+
+# Create the .gemset directory and the .gs init file.
+def init(rc)
+  Dir.mkdir(".gemset")
+  File.write(".gs", rc)
+end
+
+def help
+  puts help
+end
+
+case ARGV[0]
+when "init" then init(rc)
+when "help" then puts help
+else use
+end
