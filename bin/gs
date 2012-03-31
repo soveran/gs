@@ -26,10 +26,10 @@ EOS
 rc = <<EOS
 . ~/.bashrc
 
-GEM_HOME="$PWD/.gemset"
-GEM_PATH="$PWD/.gemset"
-GEM_SET=`basename $PWD`
-PATH="$PWD/.gemset/bin:$PATH"
+export GEM_HOME="$PWD/.gemset"
+export GEM_PATH="$PWD/.gemset"
+export GEM_SET=`basename $PWD`
+export PATH="$PWD/.gemset/bin:$PATH"
 EOS
 
 # Start a subshell with the init file .gs. If the file doesn't exist,
