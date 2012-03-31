@@ -27,8 +27,8 @@ rc = <<EOS
 . ~/.bashrc
 
 export GEM_HOME="$PWD/.gemset"
-export GEM_PATH="$PWD/.gemset"
-export GEM_SET=`basename $PWD`
+export GEM_PATH="$PWD/.gemset:`gem env path`"
+export GEM_SET="`basename $PWD`"
 export PATH="$PWD/.gemset/bin:$PATH"
 EOS
 
