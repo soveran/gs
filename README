@@ -11,10 +11,10 @@ SYNOPSIS
 DESCRIPTION
       When called with no arguments, it starts a shell session and
       configures the variables GEM_HOME, GEM_PATH and PATH to point to
-      the $PWD/.gemset directory.
+      the $PWD/.gs directory.
 
       init
-          Creates the $PWD/.gemset directory.
+          Creates the $PWD/.gs directory.
 
       help
           Displays this message.

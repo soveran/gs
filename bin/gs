@@ -14,10 +14,10 @@ SYNOPSIS
 DESCRIPTION
       When called with no arguments, it starts a shell session and
       configures the variables GEM_HOME, GEM_PATH and PATH to point to
-      the $PWD/.gemset directory.
+      the $PWD/.gs directory.
 
       init
-          Creates the $PWD/.gemset directory.
+          Creates the $PWD/.gs directory.
 
       help
           Displays this message.
@@ -26,27 +26,27 @@ EOS
 rc = <<EOS
 . ~/.bashrc
 
-export GEM_HOME="$PWD/.gemset"
-export GEM_PATH="$PWD/.gemset:`gem env path`"
+export GEM_HOME="$PWD/.gs"
+export GEM_PATH="$PWD/.gs:`gem env path`"
 export GEM_SET="`basename $PWD`"
-export PATH="$PWD/.gemset/bin:$PATH"
+export PATH="$PWD/.gs/bin:$PATH"
 EOS
 
-# Start a subshell with the init file .gs. If the file doesn't exist,
-# exit with an error.
+# Start a subshell with the init file .gs/config. If the file doesn't
+# exist, exit with an error.
 def use
-  if File.exists?(".gs")
-    exec "bash --init-file .gs"
+  if Dir.exists?(".gs")
+    exec "bash --init-file .gs/config"
   else
-    puts "File .gs not found. Try `gs help`."
+    puts "Directory .gs not found. Try `gs help`."
     exit 1
   end
 end
 
-# Create the .gemset directory and the .gs init file.
+# Create the .gs directory and the .gs/config file.
 def init(rc)
-  Dir.mkdir(".gemset")
-  File.write(".gs", rc)
+  Dir.mkdir(".gs")
+  File.write(".gs/config", rc)
 end
 
 def help
