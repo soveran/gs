@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = "gs"
-  s.version           = "0.0.4"
+  s.version           = "0.0.5"
   s.summary           = "Gemset management"
   s.description       = "Gemset management"
   s.authors           = ["Michel Martens"]
