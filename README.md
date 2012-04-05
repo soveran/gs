@@ -14,7 +14,8 @@ and using gemsets.
 
 If you want to see this workflow in action, [check the introductory
 video](http://vimeo.com/soveran/gs). The other tool showcased in the
-screencast is [dep](http://twpil.github.com/dep/).
+screencast is [dep](http://twpil.github.com/dep/), a dependency
+tracker.
 
 ## Usage
 
