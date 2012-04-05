@@ -13,7 +13,8 @@ and using gemsets.
 ## Introductory screencast
 
 If you want to see this workflow in action, [check the introductory
-video](http://vimeo.com/soveran/gs).
+video](http://vimeo.com/soveran/gs). The other tool showcased in the
+screencast is [dep](http://twpil.github.com/dep/).
 
 ## Usage
 
