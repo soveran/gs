@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.authors           = ["Michel Martens"]
   s.email             = ["soveran@gmail.com"]
   s.homepage          = "http://soveran.github.com/gs"
-  s.files             = ["README", "LICENSE", "bin/gs"]
+  s.files             = ["README.md", "LICENSE", "bin/gs"]
   s.license           = "MIT"
 
   s.executables.push("gs")
