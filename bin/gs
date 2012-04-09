@@ -36,7 +36,7 @@ case ARGV[0]
 when "init" then Dir.mkdir(".gs")
 when "help" then puts help
 else
-  if Dir.exists?(".gs")
+  if File.directory?(".gs")
     exec subshell
   else
     puts "Directory .gs not found. Try `gs help`."
