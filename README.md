@@ -26,7 +26,7 @@ are the available options:
 
 When called with no arguments, it starts a shell session and
 configures the variables GEM_HOME, GEM_PATH and PATH to point
-to the $PWD/.gs directory. In addition, it sets the GEM_SET
+to the $PWD/.gs directory. In addition, it sets the GS_NAME
 variable with the name of the current gemset (useful for PS1).
 
 ### gs init

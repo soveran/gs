@@ -14,7 +14,7 @@ SYNOPSIS
 DESCRIPTION
       When called with no arguments, it starts a shell session and
       configures the variables GEM_HOME, GEM_PATH and PATH to point
-      to the $PWD/.gs directory. In addition, it sets the GEM_SET
+      to the $PWD/.gs directory. In addition, it sets the GS_NAME
       variable with the name of the current gemset (useful for PS1).
 
       init
@@ -28,7 +28,7 @@ subshell = [
   "env",
   %Q{GEM_HOME="$PWD/.gs"},
   %Q{GEM_PATH="$PWD/.gs:`gem env path`"},
-  %Q{GEM_SET="`basename $PWD`"},
+  %Q{GS_NAME="`basename $PWD`"},
   %Q{PATH="$PWD/.gs/bin:$PATH"},
   %Q{$SHELL} ].join(" ")
 
