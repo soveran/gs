@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>gs by soveran</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>gs</h1>
+        <p>Gemset management</p>
+        <p class="view"><a href="https://github.com/soveran/gs">View the Project on GitHub <small>soveran/gs</small></a></p>
+        <ul>
+          <li><a href="https://github.com/soveran/gs/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/soveran/gs/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/soveran/gs">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Make your life easier with gemsets</h1>
+
+<p>We have all become familiar with the concept of gemsets. They come in different shapes and sizes, and provide isolation for project dependencies. Some of the libraries that implement gemsets are <a href="https://github.com/defunkt/rip">rip</a>, <a href="https://rvm.beginrescueend.com/gemsets/">RVM</a> and <a href="https://github.com/jamis/rbenv-gemset">rbenv-gemset</a>.</p>
+
+<p>This library recreates the absolutely minimal feature set for creating and using gemsets.</p>
+
+<h2>Introductory screencast</h2>
+
+<p>If you want to see this workflow in action, <a href="http://vimeo.com/soveran/gs">check the introductory video</a>. The other tool showcased in the screencast is <a href="http://twpil.github.com/dep/">dep</a>, a dependency tracker.</p>
+
+<h2>Usage</h2>
+
+<p>This library provides a command line application called <code>gs</code>. These are the available options:</p>
+
+<h3>gs init</h3>
+
+<p>Creates the $PWD/.gs directory.</p>
+
+<h3>gs help</h3>
+
+<p>Displays the documentation.</p>
+
+<h3>gs [command]</h3>
+
+<p>When called with no arguments, it starts a shell session and
+configures the variables GEM_HOME, GEM_PATH and PATH to point to the
+$PWD/.gs directory. In addition, it sets the GS_NAME variable with the
+name of the current gemset (useful for PS1).</p>
+
+<p>When called with arguments other than init or help, it will execute
+command in a gs shell session and return to the parent session once
+finished.</p>
+
+<h2>Getting started</h2>
+
+<p>First, grab the gem:</p>
+
+<pre><code>  $ gem install gs
+</code></pre>
+
+<p>Next, type <code>gs init</code> within your project and then just <code>gs</code> to start the subshell. The environment variables used by RubyGems will now point to the <code>.gs</code> directory, and every gem you install, every gem you remove, will use that path.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/soveran">soveran</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
