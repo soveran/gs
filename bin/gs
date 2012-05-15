@@ -7,9 +7,9 @@ NAME
       gs -- Gemset management
 
 SYNOPSIS
-      gs [ command ]
       gs init
       gs help
+      gs [command]
 
 DESCRIPTION
       When called with no arguments, it starts a shell session and
@@ -23,7 +23,7 @@ DESCRIPTION
       help
           Displays this message.
 
-      [ command ]
+      [command]
           An optional command that will be executed under gs shell
           session and return to the caller session once finished.
 EOS
