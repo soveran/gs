@@ -22,12 +22,16 @@ tracker.
 This library provides a command line application called `gs`. These
 are the available options:
 
-### gs
+### gs [ command ]
 
 When called with no arguments, it starts a shell session and
 configures the variables GEM_HOME, GEM_PATH and PATH to point
 to the $PWD/.gs directory. In addition, it sets the GS_NAME
 variable with the name of the current gemset (useful for PS1).
+
+When called with arguments other than init or help, it will execute
+command in a gs shell session and return to the parent session once
+finished.
 
 ### gs init
 

@@ -7,7 +7,7 @@ NAME
       gs -- Gemset management
 
 SYNOPSIS
-      gs
+      gs [ command ]
       gs init
       gs help
 
@@ -22,6 +22,10 @@ DESCRIPTION
 
       help
           Displays this message.
+
+      [ command ]
+          An optional command that will be executed under gs shell
+          session and return to the caller session once finished.
 EOS
 
 case ARGV[0]
