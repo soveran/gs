@@ -24,20 +24,22 @@ DESCRIPTION
           Displays this message.
 EOS
 
-subshell = [
-  "env",
-  %Q{GEM_HOME="$PWD/.gs"},
-  %Q{GEM_PATH="$PWD/.gs:`gem env path`"},
-  %Q{GS_NAME="`basename $PWD`"},
-  %Q{PATH="$PWD/.gs/bin:$PATH"},
-  %Q{$SHELL} ].join(" ")
-
 case ARGV[0]
 when "init" then Dir.mkdir(".gs")
 when "help" then puts help
 else
   if File.directory?(".gs")
-    exec subshell
+    env = ENV.to_hash
+    env["GS_NAME"]  = `basename $PWD`.strip
+    env["GEM_HOME"] = "#{ENV['PWD']}/.gs"
+    env["GEM_PATH"] = "#{ENV['PWD']}/.gs:`gem env path`"
+    env["PATH"]     = "#{ENV['PWD']}/.gs/bin:#{ENV['PATH']}"
+
+    if ARGV.length > 0
+      exec env, *ARGV
+    else
+      exec env, ENV["SHELL"]
+    end
   else
     puts "Directory .gs not found. Try `gs help`."
     exit 1
