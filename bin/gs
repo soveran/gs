@@ -33,11 +33,12 @@ when "init" then Dir.mkdir(".gs")
 when "help" then puts help
 else
   if File.directory?(".gs")
+    pwd = Dir.pwd
     env = ENV.to_hash
-    env["GS_NAME"]  = `basename $PWD`.strip
-    env["GEM_HOME"] = "#{ENV['PWD']}/.gs"
-    env["GEM_PATH"] = "#{ENV['PWD']}/.gs:#{`gem env path`}"
-    env["PATH"]     = "#{ENV['PWD']}/.gs/bin:#{ENV['PATH']}"
+    env["GS_NAME"]  = File.basename(pwd)
+    env["GEM_HOME"] = pwd + "/.gs"
+    env["GEM_PATH"] = pwd + "/.gs:#{`gem env path`}"
+    env["PATH"]     = pwd + "/.gs/bin:#{ENV['PATH']}"
 
     if ARGV.length > 0
       exec env, *ARGV
