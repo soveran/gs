@@ -29,7 +29,7 @@ DESCRIPTION
 EOS
 
 case ARGV[0]
-when "init" then Dir.mkdir(".gs") ; exec($0)
+when "init" then Dir.mkdir(".gs"); exec($0)
 when "help" then puts help
 else
   if File.directory?(".gs")
