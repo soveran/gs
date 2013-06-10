@@ -37,7 +37,7 @@ else
     env = ENV.to_hash
     env["GS_NAME"]  = File.basename(pwd)
     env["GEM_HOME"] = pwd + "/.gs"
-    env["GEM_PATH"] = pwd + "/.gs:#{`gem env path`}"
+    env["GEM_PATH"] = pwd + "/.gs:#{`gem env path`.strip}"
     env["PATH"]     = pwd + "/.gs/bin:#{ENV['PATH']}"
 
     if ARGV.length > 0
