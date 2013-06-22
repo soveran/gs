@@ -43,7 +43,7 @@ else
     if ARGV.length > 0
       exec env, *ARGV
     else
-      exec env, ENV["SHELL"] || ENV["ComSpec"]
+      exec env, ENV["SHELL"] || ENV["COMSPEC"]
     end
   else
     puts "Directory .gs not found. Try `gs help`."
