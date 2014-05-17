@@ -51,3 +51,19 @@ Next, type `gs init` within your project and then just `gs` to start
 the subshell. The environment variables used by RubyGems will now
 point to the `.gs` directory, and every gem you install, every gem you
 remove, will use that path.
+
+### Alternatives
+
+There are some tools that provide a similar functionality and can
+be used as a drop in replacement for `gs`. Here are two
+outstanding alternatives:
+
+#### [gst](https://github.com/tonchis/gst)
+
+This is a bash implementation that modifies the existing
+environment instead of creating a subshell.
+
+#### [bs](https://github.com/educabilia/bs)
+
+This is a manager for environment variables written in bash. It
+takes a different and very interesting approach.
