@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.description       = "Gemset management"
   s.authors           = ["Michel Martens"]
   s.email             = ["soveran@gmail.com"]
-  s.homepage          = "http://soveran.github.com/gs"
+  s.homepage          = "https://github.com/soveran/gs/tree/gemset"
   s.files             = ["README.md", "LICENSE", "bin/gemset"]
   s.license           = "MIT"
 
