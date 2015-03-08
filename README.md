@@ -13,24 +13,24 @@ and using gemsets.
 ## Introductory screencast
 
 If you want to see this workflow in action, [check the introductory
-video](http://vimeo.com/soveran/gs). The other tool showcased in the
-screencast is [dep](http://twpil.github.com/dep/), a dependency
-tracker.
+video](http://vimeo.com/soveran/gs). Note that this tool was renamed
+to `gemset`. The other tool showcased in the screencast is
+[dep](http://twpil.github.com/dep/), a dependency tracker.
 
 ## Usage
 
-This library provides a command line application called `gs`. These
+This library provides a command line application called `gemset`. These
 are the available options:
 
-### gs init
+### gemset init
 
 Creates the $PWD/.gs directory.
 
-### gs help
+### gemset help
 
 Displays the documentation.
 
-### gs [command]
+### gemset [command]
 
 When called with no arguments, it starts a shell session and
 configures the variables GEM_HOME, GEM_PATH and PATH to point to the
@@ -38,16 +38,16 @@ $PWD/.gs directory. In addition, it sets the GS_NAME variable with the
 name of the current gemset (useful for PS1).
 
 When called with arguments other than init or help, it will execute
-command in a gs shell session and return to the parent session once
+command in a gemset shell session and return to the parent session once
 finished.
 
 ## Getting started
 
 First, grab the gem:
 
-      $ gem install gs
+      $ gem install gemset
 
-Next, type `gs init` within your project and then just `gs` to start
+Next, type `gemset init` within your project and then just `gemset` to start
 the subshell. The environment variables used by RubyGems will now
 point to the `.gs` directory, and every gem you install, every gem you
 remove, will use that path.
@@ -55,7 +55,7 @@ remove, will use that path.
 ### Alternatives
 
 There are some tools that provide a similar functionality and can
-be used as a drop in replacement for `gs`. Here are two
+be used as a drop in replacement for `gemset`. Here are two
 outstanding alternatives:
 
 #### [gst](https://github.com/tonchis/gst)
